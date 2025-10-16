@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+  File: product_catalog.html
+  Purpose: Product catalog page using only HTML (no CSS or JS)
+  Features:
+  - Product table with name, description, price, availability, and image.
+  - Uses colspan and rowspan attributes for clarity.
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Store - Product Catalog</title>
+  </head>
+
+  <body>
+    <!-- Page header -->
+    <header>
+      <h1>🌸 Khushi’s Online Store 🌸</h1>
+      <p>Welcome to our catalog! Browse our latest products below.</p>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      <h2>Product Catalog</h2>
+
+      <!-- Product table -->
+      <table border="1" cellspacing="0" cellpadding="10">
+        <caption>
+          Available Products
+        </caption>
+
+        <!-- Table header -->
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Price (₹)</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+
+        <!-- Table body -->
+        <tbody>
+          <!-- Product 1 -->
+          <tr>
+            <td rowspan="2">
+              <img
+                src="https://via.placeholder.com/100"
+                alt="Product 1"
+                width="100"
+                height="100"
+              />
+            </td>
+            <td><strong>Floral Printed Top</strong></td>
+            <td>Lightweight cotton top with floral design.</td>
+            <td>799</td>
+            <td>In Stock</td>
+          </tr>
+          <tr>
+            <td colspan="4">Category: Women’s Fashion</td>
+          </tr>
+
+          <!-- Product 2 -->
+          <tr>
+            <td rowspan="2">
+              <img
+                src="https://via.placeholder.com/100"
+                alt="Product 2"
+                width="100"
+                height="100"
+              />
+            </td>
+            <td><strong>Bluetooth Earbuds</strong></td>
+            <td>Noise-cancelling, long battery life, compact case.</td>
+            <td>1,499</td>
+            <td>Out of Stock</td>
+          </tr>
+          <tr>
+            <td colspan="4">Category: Electronics</td>
+          </tr>
+
+          <!-- Product 3 -->
+          <tr>
+            <td rowspan="2">
+              <img
+                src="https://via.placeholder.com/100"
+                alt="Product 3"
+                width="100"
+                height="100"
+              />
+            </td>
+            <td><strong>Notebook Journal</strong></td>
+            <td>Hardcover notebook with 200 ruled pages.</td>
+            <td>249</td>
+            <td>In Stock</td>
+          </tr>
+          <tr>
+            <td colspan="4">Category: Stationery</td>
+          </tr>
+
+          <!-- Product 4 -->
+          <tr>
+            <td rowspan="2">
+              <img
+                src="https://via.placeholder.com/100"
+                alt="Product 4"
+                width="100"
+                height="100"
+              />
+            </td>
+            <td><strong>Coffee Mug</strong></td>
+            <td>Classic ceramic mug – microwave safe.</td>
+            <td>399</td>
+            <td>Limited Stock</td>
+          </tr>
+          <tr>
+            <td colspan="4">Category: Home & Kitchen</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Khushi’s Online Store. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
