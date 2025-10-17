@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Selection Page</title>
+</head>
+<body>
+  <h1>Travel Preferences</h1>
+
+  <form>
+    <p>
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option value="usa">USA</option>
+        <option value="france" selected>France</option>
+        <option value="japan">Japan</option>
+        <option value="india">India</option>
+      </select>
+    </p>
+
+    <p>
+      <label for="state">State/Region:</label>
+      <select id="state" name="state">
+        <option value="california">California</option>
+        <option value="ile-de-france" selected>Île-de-France</option>
+        <option value="kyoto">Kyoto</option>
+        <option value="rajasthan">Rajasthan</option>
+      </select>
+    </p>
+
+    <p>
+      <label for="city">City:</label>
+      <select id="city" name="city">
+        <option value="paris" selected>Paris</option>
+        <option value="lyon">Lyon</option>
+        <option value="tokyo">Tokyo</option>
+        <option value="jaipur">Jaipur</option>
+      </select>
+    </p>
+
+    <p>
+      <label for="tourist">Favorite Tourist Place:</label>
+      <select id="tourist" name="tourist">
+        <option value="eiffel">Eiffel Tower</option>
+        <option value="louvre" selected>Louvre Museum</option>
+        <option value="mount-fuji">Mount Fuji</option>
+        <option value="amer-fort">Amer Fort</option>
+      </select>
+    </p>
+  </form>
+
+  <p>You have selected: France, Île-de-France, Paris, and the Louvre Museum as your favorite tourist destination.</p>
+</body>
+</html>
