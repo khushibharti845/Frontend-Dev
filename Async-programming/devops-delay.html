@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Delay</title>
+    <link rel="stylesheet" href="devops-delay.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 DevOps Delay: Server Response Race</h1>
+        <button id="startDeployment">Start Deployment</button>
+        <div id="serverStatus">
+            <div class="server">
+                <h3>Server A</h3>
+                <p id="serverA">Waiting...</p>
+            </div>
+            <div class="server">
+                <h3>Server B</h3>
+                <p id="serverB">Waiting...</p>
+            </div>
+        </div>
+        <div id="results"></div>
+    </div>
+    <script src="devops-delay.js"></script>
+</body>
+</html>
