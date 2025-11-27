@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Members Directory</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 40px 20px;
+      margin: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+    }
+    .controls {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 12px 25px;
+      margin: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    .department {
+      margin-bottom: 30px;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .dept-header {
+      font-size: 24px;
+      font-weight: bold;
+      color: #667eea;
+      margin-bottom: 20px;
+      cursor: pointer;
+      padding: 15px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+    .dept-header:hover {
+      background: #667eea;
+      color: white;
+    }
+    .team-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .member {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+    .member:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .member.manager {
+      border: 2px solid #4caf50;
+      background: #e8f5e9;
+    }
+    .member.highlighted {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .member-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .member-role {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .member.highlighted .member-role {
+      color: #f0f0f0;
+    }
+    .contact-info {
+      display: none;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #ddd;
+      font-size: 13px;
+    }
+    .member.highlighted .contact-info {
+      border-top-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>👥 Team Members Directory</h1>
+    
+    <div class="controls">
+      <button class="btn" id="collapseBtn">Collapse All</button>
+      <button class="btn" id="expandBtn">Expand All</button>
+      <button class="btn" id="randomBtn">Random Employee</button>
+    </div>
+
+    <div class="department" data-dept="engineering">
+      <div class="dept-header">Engineering Department</div>
+      <div class="team-members">
+        <div class="member manager" data-role="manager" data-sibling="emp2,emp3">
+          <div class="member-name">Alice Johnson</div>
+          <div class="member-role">Engineering Manager</div>
+          <div class="contact-info">Email: alice@company.com<br>Phone: +1-555-0101</div>
+        </div>
+        <div class="member" data-role="employee" data-sibling="emp1,emp3" data-id="emp2">
+          <div class="member-name">Bob Smith</div>
+          <div class="member-role">Senior Developer</div>
+          <div class="contact-info">Email: bob@company.com<br>Phone: +1-555-0102</div>
+        </div>
+        <div class="member" data-role="employee" data-sibling="emp1,emp2" data-id="emp3">
+          <div class="member-name">Charlie Brown</div>
+          <div class="member-role">Frontend Developer</div>
+          <div class="contact-info">Email: charlie@company.com<br>Phone: +1-555-0103</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="department" data-dept="marketing">
+      <div class="dept-header">Marketing Department</div>
+      <div class="team-members">
+        <div class="member manager" data-role="manager" data-sibling="emp5,emp6">
+          <div class="member-name">Diana Prince</div>
+          <div class="member-role">Marketing Manager</div>
+          <div class="contact-info">Email: diana@company.com<br>Phone: +1-555-0104</div>
+        </div>
+        <div class="member" data-role="employee" data-sibling="emp4,emp6" data-id="emp5">
+          <div class="member-name">Ethan Hunt</div>
+          <div class="member-role">Social Media Specialist</div>
+          <div class="contact-info">Email: ethan@company.com<br>Phone: +1-555-0105</div>
+        </div>
+        <div class="member" data-role="employee" data-sibling="emp4,emp5" data-id="emp6">
+          <div class="member-name">Fiona Clark</div>
+          <div class="member-role">Content Creator</div>
+          <div class="contact-info">Email: fiona@company.com<br>Phone: +1-555-0106</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="department" data-dept="sales">
+      <div class="dept-header">Sales Department</div>
+      <div class="team-members">
+        <div class="member manager" data-role="manager" data-sibling="emp8">
+          <div class="member-name">George Wilson</div>
+          <div class="member-role">Sales Manager</div>
+          <div class="contact-info">Email: george@company.com<br>Phone: +1-555-0107</div>
+        </div>
+        <div class="member" data-role="employee" data-sibling="emp7" data-id="emp8">
+          <div class="member-name">Hannah Lee</div>
+          <div class="member-role">Account Executive</div>
+          <div class="contact-info">Email: hannah@company.com<br>Phone: +1-555-0108</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="team.js"></script>
+</body>
+</html>

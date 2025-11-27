@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Highlight</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 40px 20px;
+      margin: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .product {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    .product.highlighted {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      transform: scale(1.05);
+    }
+    .product-name {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .product-price {
+      font-size: 28px;
+      color: #4caf50;
+      margin-bottom: 15px;
+    }
+    .product.highlighted .product-price {
+      color: #fff;
+    }
+    .product-description {
+      color: #666;
+      margin-bottom: 15px;
+      display: none;
+    }
+    .product.highlighted .product-description {
+      color: #f0f0f0;
+    }
+    .favorite-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .favorite-icon:not(.selected) {
+      color: #ddd;
+    }
+    .favorite-icon.selected {
+      color: #ff6b6b;
+      transform: scale(1.2);
+    }
+    .product[data-discount="true"]::after {
+      content: "SALE!";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #ff6b6b;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .product[data-discount="true"] {
+      border: 3px solid #ff6b6b;
+    }
+    .product[data-stock="out"]::before {
+      content: "Out of Stock";
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background: #f44336;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🛍️ Product Showcase</h1>
+    <div class="products">
+      <div class="product" data-discount="true" data-stock="in">
+        <span class="favorite-icon">♥</span>
+        <div class="product-name">Wireless Headphones</div>
+        <div class="product-price">$79.99</div>
+        <div class="product-description">Premium sound quality with noise cancellation.</div>
+      </div>
+
+      <div class="product" data-discount="false" data-stock="in">
+        <span class="favorite-icon">♥</span>
+        <div class="product-name">Smart Watch</div>
+        <div class="product-price">$199.99</div>
+        <div class="product-description">Track your fitness and stay connected.</div>
+      </div>
+
+      <div class="product" data-discount="true" data-stock="in">
+        <span class="favorite-icon">♥</span>
+        <div class="product-name">Bluetooth Speaker</div>
+        <div class="product-price">$49.99</div>
+        <div class="product-description">Portable speaker with 360° sound.</div>
+      </div>
+
+      <div class="product" data-discount="false" data-stock="out">
+        <span class="favorite-icon">♥</span>
+        <div class="product-name">Gaming Mouse</div>
+        <div class="product-price">$59.99</div>
+        <div class="product-description">High precision gaming mouse with RGB lighting.</div>
+      </div>
+
+      <div class="product" data-discount="true" data-stock="in">
+        <span class="favorite-icon">♥</span>
+        <div class="product-name">USB-C Hub</div>
+        <div class="product-price">$39.99</div>
+        <div class="product-description">7-in-1 USB-C hub with multiple ports.</div>
+      </div>
+
+      <div class="product" data-discount="false" data-stock="in">
+        <span class="favorite-icon">♥</span>
+        <div class="product-name">Laptop Stand</div>
+        <div class="product-price">$29.99</div>
+        <div class="product-description">Ergonomic aluminum stand for better posture.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="product.js"></script>
+</body>
+</html>
