@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Scheduler</title>
+    <link rel="stylesheet" href="task-scheduler.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 Task Scheduler: Micro vs Macro</h1>
+        <button id="runScheduler">Run Task Scheduler</button>
+        <div id="output"></div>
+        <div id="explanation">
+            <h2>Explanation</h2>
+            <p>Microtasks (Promise callbacks) run before macrotasks (setTimeout) because the event loop prioritizes the microtask queue after each script execution.</p>
+        </div>
+    </div>
+    <script src="task-scheduler.js"></script>
+</body>
+</html>
