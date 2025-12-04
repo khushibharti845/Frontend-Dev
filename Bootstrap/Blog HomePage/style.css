@@ -1,0 +1,15 @@
+:root {
+  --bs-primary: #ff6b6b;
+  --bs-font-sans-serif: 'Nunito', sans-serif;
+}
+
+body {
+  font-family: var(--bs-font-sans-serif);
+}
+.card {
+  border: none;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
